@@ -1,3 +1,4 @@
 piqt/
 venv/
 */.idea/*
+__pycache__
