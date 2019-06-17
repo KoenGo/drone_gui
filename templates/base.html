@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drone GUI</title>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+<script type="text/javascript" src="/static/chart.bundle.min.js"></script>
+<script type="text/javascript" src="/static/poll.js"></script>
+<script type="text/javascript" src="/static/gauge.min.js"></script>
+
+<body>
+{% include 'graphs.html' %}
+{% include 'motor_gauges.html' %}
+
+<script type="text/javascript" src="/static/gauges.js"></script>
+<script type="text/javascript" src="/static/graphs.js"></script>
+
+<script>
+
+    setInterval(function () {
+        getData()
+    }, 100);
+
+
+</script>
+
+</body>
+</html>
