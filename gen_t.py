@@ -23,6 +23,4 @@ while 1:
         line = ','.join([str(i) for i in nums])
         with open('dat.txt', 'w') as f:
             f.write(line)
-        with open('static/dat.txt', 'w') as f:
-            f.write(line)
         time.sleep(0.05)

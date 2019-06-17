@@ -7,7 +7,6 @@ req.onreadystatechange = function () {
         let data = req.responseText;
         processData(data);
         console.timeEnd("gag");
-
     }
 };
 
