@@ -9,13 +9,18 @@
 <link rel="stylesheet" type="text/css" href="/static/gui_style.css">
 <script type="text/javascript" src="/static/chart.bundle.min.js"></script>
 <script type="text/javascript" src="/static/chartjs-plugin-streaming.min.js"></script>
+<script type="text/javascript" src="/static/init.js"></script>
 <script type="text/javascript" src="/static/poll.js"></script>
 <script type="text/javascript" src="/static/gauge.min.js"></script>
 
 
 <body>
-<div class="container" style="margin-top: 50px">
-    {% include 'graphs.html' %}
+<div class="container-fluid">
+        {% include 'graphs.html' %}
+</div>
+<div class="container">
+    {% include 'mode.html' %}
+
     {% include 'motor_gauges.html' %}
 </div>
 
@@ -24,7 +29,7 @@
 <script type="text/javascript" src="/static/graphs.js"></script>
 
 <script>
-
+    initGraphs();
     setInterval(function () {
         getData()
     }, 100);

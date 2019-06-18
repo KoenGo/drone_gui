@@ -25,7 +25,7 @@ def gen_motor_values(step):
 #             f.write(line)
 #         time.sleep(0.05)
 def gen_data():
-    with open('term.txt') as f:
+    with open('data_time.txt') as f:
         lines = f.readlines()
         i = 0
         while 1:

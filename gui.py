@@ -8,9 +8,9 @@ app = Flask(__name__, instance_relative_config=True)
 def index():
     context = dict()
     context['motor_gauges'] = [i for i in range(1, 5)]
-    context['graphs'] = [{'title': 'Acceleration', 'label': 'acceleration', 'width': '90%', 'height': 'auto'},
-                         {'title': 'Gyro', 'label': 'gyro', 'width': '90%', 'height': 'auto'},
-                         {'title': 'Sensors', 'label': 'sensors', 'width': '90%', 'height': 'auto'}]
+    context['graphs'] = [{'title': 'Gyro', 'label': 'gyro'},
+                         {'title': 'Angle', 'label': 'angle'},
+                         {'title': 'Motors', 'label': 'motors'}]
     return render_template('base.html', **context)
 
 

@@ -1,127 +1,3 @@
-Script started on 2019-06-18 13:52:42+0200
-]0;ibrahim@Ibrahim: ~/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073[01;32mibrahim@Ibrahim[00m:[01;34m~/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073[00m$ make upload-run
-rm -rf _build
-mkdir _build
-Compiling file: system_nrf51.c
-Compiling file: nrf_delay.c
-Compiling file: in4073.c
-Compiling file: communication.c
-Compiling file: logging.c
-Compiling file: control.c
-Compiling file: filter.c
-Compiling file: gpio.c
-Compiling file: timers.c
-Compiling file: uart.c
-Compiling file: queue.c
-Compiling file: twi.c
-Compiling file: adc.c
-Compiling file: baro.c
-Compiling file: ble.c
-Compiling file: spi_flash.c
-Compiling file: inv_mpu.c
-Compiling file: inv_mpu_dmp_motion_driver.c
-Compiling file: ml.c
-Compiling file: mpu_wrapper.c
-Compiling file: app_error.c
-Compiling file: app_timer.c
-Compiling file: nrf_assert.c
-Compiling file: nrf_drv_common.c
-Compiling file: pstorage.c
-Compiling file: ble_advdata.c
-Compiling file: ble_advertising.c
-Compiling file: ble_conn_params.c
-Compiling file: ble_nus.c
-Compiling file: ble_srv_common.c
-Compiling file: softdevice_handler.c
-Compiling file: gcc_startup_nrf51.s
-Linking target: in4073.out
-make[1]: Entering directory '/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073'
-Preparing: in4073.bin
-Preparing: in4073.hex
-
-   text	   data	    bss	    dec	    hex	filename
-  50080	    180	   2700	  52960	   cee0	_build/in4073.out
-
-make[1]: Leaving directory '/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073'
-cd pc_terminal/; make
-make[1]: Entering directory '/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073/pc_terminal'
-gcc -g -Wall RS232_serial.c term_serial.c commands.c pc_terminal.c -lm -o ./pc-terminal
-make[1]: Leaving directory '/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073/pc_terminal'
-dfu_serial/./serial_dfu.py  _build/in4073.bin
-50260
-Timed out waiting for acknowledgement from device.
-Timed out waiting for acknowledgement from device.
-Traceback (most recent call last):
-  File "dfu_serial/./serial_dfu.py", line 23, in <module>
-    serialTransport.send_firmware(firmware)
-  File "/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073/dfu_serial/dfu_transport_serial.py", line 140, in send_firmware
-    self.send_packet(pkt)	
-  File "/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073/dfu_serial/dfu_transport_serial.py", line 166, in send_packet
-    ack = self.get_ack_nr()
-  File "/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073/dfu_serial/dfu_transport_serial.py", line 190, in get_ack_nr
-    temp = self.serial_port.read(6)
-  File "/home/ibrahim/.local/lib/python2.7/site-packages/serial/serialposix.py", line 501, in read
-    'device reports readiness to read but returned no data '
-serial.serialutil.SerialException: device reports readiness to read but returned no data (device disconnected or multiple access on port?)
-Makefile:235: recipe for target 'upload-run' failed
-make: *** [upload-run] Error 1
-]0;ibrahim@Ibrahim: ~/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073[01;32mibrahim@Ibrahim[00m:[01;34m~/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073[00m$ make upload-run
-rm -rf _build
-mkdir _build
-Compiling file: system_nrf51.c
-Compiling file: nrf_delay.c
-Compiling file: in4073.c
-Compiling file: communication.c
-Compiling file: logging.c
-Compiling file: control.c
-Compiling file: filter.c
-Compiling file: gpio.c
-Compiling file: timers.c
-Compiling file: uart.c
-Compiling file: queue.c
-Compiling file: twi.c
-Compiling file: adc.c
-Compiling file: baro.c
-Compiling file: ble.c
-Compiling file: spi_flash.c
-Compiling file: inv_mpu.c
-Compiling file: inv_mpu_dmp_motion_driver.c
-Compiling file: ml.c
-Compiling file: mpu_wrapper.c
-Compiling file: app_error.c
-Compiling file: app_timer.c
-Compiling file: nrf_assert.c
-Compiling file: nrf_drv_common.c
-Compiling file: pstorage.c
-Compiling file: ble_advdata.c
-Compiling file: ble_advertising.c
-Compiling file: ble_conn_params.c
-Compiling file: ble_nus.c
-Compiling file: ble_srv_common.c
-Compiling file: softdevice_handler.c
-Compiling file: gcc_startup_nrf51.s
-Linking target: in4073.out
-make[1]: Entering directory '/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073'
-Preparing: in4073.bin
-Preparing: in4073.hex
-
-   text	   data	    bss	    dec	    hex	filename
-  50080	    180	   2700	  52960	   cee0	_build/in4073.out
-
-make[1]: Leaving directory '/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073'
-cd pc_terminal/; make
-make[1]: Entering directory '/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073/pc_terminal'
-gcc -g -Wall RS232_serial.c term_serial.c commands.c pc_terminal.c -lm -o ./pc-terminal
-make[1]: Leaving directory '/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073/pc_terminal'
-dfu_serial/./serial_dfu.py  _build/in4073.bin
-50260
-Progress: 1/99 frames, 1%Progress: 2/99 frames, 2%Progress: 3/99 frames, 3%Progress: 4/99 frames, 4%Progress: 5/99 frames, 5%Progress: 6/99 frames, 6%Progress: 7/99 frames, 7%Progress: 8/99 frames, 8%Progress: 9/99 frames, 9%Progress: 10/99 frames, 10%Progress: 11/99 frames, 11%Progress: 12/99 frames, 12%Progress: 13/99 frames, 13%Progress: 14/99 frames, 14%Progress: 15/99 frames, 15%Progress: 16/99 frames, 16%Progress: 17/99 frames, 17%Progress: 18/99 frames, 18%Progress: 19/99 frames, 19%Progress: 20/99 frames, 20%Progress: 21/99 frames, 21%Progress: 22/99 frames, 22%Progress: 23/99 frames, 23%Progress: 24/99 frames, 24%Progress: 25/99 frames, 25%Progress: 26/99 frames, 26%Progress: 27/99 frames, 27%Progress: 28/99 frames, 28%Progress: 29/99 frames, 29%Progress: 30/99 frames, 30%Progress: 31/99 frames, 31%Progress: 32/99 frames, 32%Progress: 33/99 frames, 33%Progress: 34/99 frames, 34%Progress: 35/99 frames, 35%Progress: 36/99 frames, 36%Progress: 37/99 frames, 37%Progress: 38/99 frames, 38%Progress: 39/99 frames, 39%Progress: 40/99 frames, 40%Progress: 41/99 frames, 41%Progress: 42/99 frames, 42%Progress: 43/99 frames, 43%Progress: 44/99 frames, 44%Progress: 45/99 frames, 45%Progress: 46/99 frames, 46%Progress: 47/99 frames, 47%Progress: 48/99 frames, 48%Progress: 49/99 frames, 49%Progress: 50/99 frames, 50%Progress: 51/99 frames, 51%Progress: 52/99 frames, 52%Progress: 53/99 frames, 53%Progress: 54/99 frames, 54%Progress: 55/99 frames, 55%Progress: 56/99 frames, 56%Progress: 57/99 frames, 57%Progress: 58/99 frames, 58%Progress: 59/99 frames, 59%Progress: 60/99 frames, 60%Progress: 61/99 frames, 61%Progress: 62/99 frames, 62%Progress: 63/99 frames, 63%Progress: 64/99 frames, 64%Progress: 65/99 frames, 65%Progress: 66/99 frames, 66%Progress: 67/99 frames, 67%Progress: 68/99 frames, 68%Progress: 69/99 frames, 69%Progress: 70/99 frames, 70%Progress: 71/99 frames, 71%Progress: 72/99 frames, 72%Progress: 73/99 frames, 73%Progress: 74/99 frames, 74%Progress: 75/99 frames, 75%Progress: 76/99 frames, 76%Progress: 77/99 frames, 77%Progress: 78/99 frames, 78%Progress: 79/99 frames, 79%Progress: 80/99 frames, 80%Progress: 81/99 frames, 81%Progress: 82/99 frames, 82%Progress: 83/99 frames, 83%Progress: 84/99 frames, 84%Progress: 85/99 frames, 85%Progress: 86/99 frames, 86%Progress: 87/99 frames, 87%Progress: 88/99 frames, 88%Progress: 89/99 frames, 89%Progress: 90/99 frames, 90%Progress: 91/99 frames, 91%Progress: 92/99 frames, 92%Progress: 93/99 frames, 93%Progress: 94/99 frames, 94%Progress: 95/99 frames, 95%Progress: 96/99 frames, 96%Progress: 97/99 frames, 97%Progress: 98/99 frames, 98%Progress: 99/99 frames, 100%
-cd pc_terminal/; make run
-make[1]: Entering directory '/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073/pc_terminal'
-gcc -g -Wall RS232_serial.c term_serial.c commands.c pc_terminal.c -lm -o ./pc-terminal
-./pc-terminal
-
-Terminal program - Embedded Real-Time Systems
 Time : 1560858845199  Mode:   0  DMP Angles (R P):       0       0 Gyro (R P Y):       0       0       0 V_bat:  644 Motors:   0   0   0   0 Gains P:   0 P1:   0 P2:   0 Setpoints:   0   0   0   0
 Time : 1560858845215  Mode:   0  DMP Angles (R P):       0       0 Gyro (R P Y):       0       0       0 V_bat:  595 Motors:   0   0   0   0 Gains P:   0 P1:   0 P2:   0 Setpoints:   0   0   0   0
 Time : 1560858845264  Mode:   0  DMP Angles (R P):       0       0 Gyro (R P Y):       0       0       0 V_bat:  595 Motors:   0   0   0   0 Gains P:   0 P1:   0 P2:   0 Setpoints:   0   0   0   0
@@ -1934,10 +1810,3 @@ Time : 1560858949443  Mode:   0  RAW Angles (R P):     142       7 Gyro (R P Y):
 Time : 1560858949490  Mode:   0  RAW Angles (R P):     142       7 Gyro (R P Y):      -4      -1      -1 V_bat:  595 Motors:   0   0   0   0 Gains P:   0 P1:   0 P2:   0 Setpoints: 127 127 127   0
 Time : 1560858949539  Mode:   0  RAW Angles (R P):     142       7 Gyro (R P Y):      -4      -1      -1 V_bat:  595 Motors:   0   0   0   0 Gains P:   0 P1:   0 P2:   0 Setpoints: 127 127 127   0
 Time : 1560858949587  Mode:   0  RAW Angles (R P):     142       7 Gyro (R P Y):      -4      -1      -1 V_bat:  595 Motors:   0   0   0   0 Gains P:   0 P1:   0 P2:   0 Setpoints: 127 127 127   0
-
- EXIT :D 
-make[1]: Leaving directory '/home/ibrahim/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073/pc_terminal'
-]0;ibrahim@Ibrahim: ~/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073[01;32mibrahim@Ibrahim[00m:[01;34m~/Desktop/Embedded_Real_Time_Systems/es_lab_2019/in4073[00m$ exit
-exit
-
-Script done on 2019-06-18 13:58:10+0200
