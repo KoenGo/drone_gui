@@ -1,7 +1,7 @@
 let gauges = [];
 
 let opts = {
-    angle: -0.20, // The span of the gauge arc
+    angle: -0.15, // The span of the gauge arc
     lineWidth: 0.2, // The line thickness
     radiusScale: 1, // Relative radius
     pointer: {

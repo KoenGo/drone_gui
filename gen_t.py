@@ -18,9 +18,29 @@ def gen_motor_values(step):
             yield nums
 
 
+# while 1:
+#     for nums in gen_motor_values(4):
+#         line = ','.join([str(i) for i in nums])
+#         with open('dat.txt', 'w') as f:
+#             f.write(line)
+#         time.sleep(0.05)
+def gen_data():
+    with open('term.txt') as f:
+        lines = f.readlines()
+        i = 0
+        while 1:
+            while i < len(lines):
+                yield lines[i]
+                i += 1
+            while i > 0:
+                i -= 1
+                yield lines[i]
+
+
 while 1:
-    for nums in gen_motor_values(4):
-        line = ','.join([str(i) for i in nums])
+    for d in gen_data():
         with open('dat.txt', 'w') as f:
-            f.write(line)
-        time.sleep(0.05)
+            f.write(d)
+        time.sleep(0.1)
+
+

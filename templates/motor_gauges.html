@@ -1,12 +1,11 @@
-<div class="container-fluid " id="motor_gauges">
-  <div class="d-flex justify-content-center">
-      {% for gauge_n in motor_gauges %}
-      <div class="col-2 text-center">
-        <h3>Motor {{ gauge_n }}</h3><br>
-        <canvas id="gauge_motor{{ gauge_n }}" style="width:100%;height:auto"></canvas>
+<div class="row" style="margin-top:50px;">
+    {% for gauge_n in motor_gauges %}
+
+    <div class="col" style="text-align: center">
+        <h4>Motor {{ gauge_n }}</h4><br>
+        <canvas class="w-100" id="gauge_motor{{ gauge_n }}"></canvas>
         <br>
         <span id="val_motor{{ gauge_n }}"></span>
     </div>
-      {% endfor %}
-  </div>
+    {% endfor %}
 </div>
