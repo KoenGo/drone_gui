@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+import os
 
 app = Flask(__name__, instance_relative_config=True)
 
@@ -14,7 +15,16 @@ def index():
     return render_template('base.html', **context)
 
 
+data = None
+
+
 @app.route('/data')
 def data_source():
-    with open('dat.txt') as data:
-        return data.read()
+    path = '/home/koen/Documents/MasterES/es-lab-2019/software_package_linux/es_lab_2019/in4073/out.txt'
+    if os.path.exists(path):
+        f = open(path)
+        global data
+        data = f.read()
+        f.close()
+        os.remove(path)
+    return data

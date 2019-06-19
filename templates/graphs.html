@@ -1,9 +1,8 @@
 <div class="row">
     {% for graph in graphs %}
-
     <div class="col-4" style="text-align: center;">
         <h4>{{graph.title}}</h4><br>
-        <canvas id="{{ graph.label }}" style="height:100%;"></canvas>
+        <canvas id="{{ graph.label }}"></canvas>
     </div>
     {% endfor %}
 

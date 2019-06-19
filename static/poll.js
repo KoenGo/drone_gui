@@ -1,3 +1,5 @@
+let last_dat;
+
 let req = new XMLHttpRequest();
 
 req.onreadystatechange = function () {
@@ -23,6 +25,7 @@ let display = {
     setpoints: null,
     motors: null,
     battery: null,
+    toggle: null
 };
 
 let ui = {
@@ -41,6 +44,7 @@ let ui = {
         this.updatePvalues();
         this.updateSetpoints();
         this.updateBattery();
+        this.updateToggle();
     },
 
     updateMode: function () {
@@ -62,6 +66,10 @@ let ui = {
         document.getElementById('setpoints').innerText = display.setpoints.join(' ');
     },
 
+    updateToggle: function(){
+        document.getElementById('toggle').innerText = display.toggle;
+    },
+
     valuesUnkown: function () {
         document.getElementById('mode').innerText = "?";
         document.getElementById('p0').innerText = "?";
@@ -69,25 +77,36 @@ let ui = {
         document.getElementById('p2').innerText = "?";
         document.getElementById('battery').innerText = "?";
         document.getElementById('setpoints').innerText = "?";
+        document.getElementById('toggle').innerText = "?";
     }
 };
 
 function processData(data) {
     let split_data = data.split(/\s+/);
-    console.log(split_data);
-    console.log(split_data.length);
+    // console.log(split_data);
+    // console.log(split_data.length);
+    if(split_data.length === 0){
+        split_data = last_dat;
+    }
+    if (split_data.length > 38) {
+        split_data = split_data.slice(0, 39);
+    }
 
     if (split_data.length !== 38) {
-        plot.pushZeroValues();
-        ui.valuesUnkown();
+        split_data = last_dat;
         return;
     }
+        console.log(split_data);
+    console.log(split_data.length);
 
     let time = split_data[2];
     console.log('time ' + time);
 
     let mode = split_data[4];
     console.log('mode ' + mode);
+
+    let toggle = split_data[5];
+    console.log('toggle' + toggle);
 
     let angle_rp = split_data.slice(9, 11);
     console.log('angle_rp ' + angle_rp);
@@ -105,7 +124,7 @@ function processData(data) {
     console.log('p_values ' + p_values);
 
     let setpoints = split_data.slice(33, 37);
-    console.log('p_values ' + p_values);
+    console.log('setpoints ' + setpoints);
 
     plot.data_buffer.angle.push(angle_rp);
     plot.data_buffer.gyro.push(gyro_rpy);
@@ -117,5 +136,8 @@ function processData(data) {
     display.motors = motors;
     display.battery = battery;
     display.setpoints = setpoints;
+    display.toggle = toggle;
     ui.updateAll();
+    last_dat = split_data;
+
 }

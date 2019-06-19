@@ -54,7 +54,10 @@ function initGraphs() {
             borderColor: 'rgb(241, 244, 66)',
             data: []
         }]
-    }
+    };
+    gyro_chart.update();
+    angle_chart.update();
+    motors_chart.update();
 }
 
 let plot = {
