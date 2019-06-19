@@ -3,84 +3,13 @@
 
     <div class="col-4" style="text-align: center;">
         <h4>{{graph.title}}</h4><br>
-        <canvas id="{{ graph.label }}" style="height:95%;"></canvas>
+        <canvas id="{{ graph.label }}" style="height:100%;"></canvas>
     </div>
     {% endfor %}
 
 </div>
-<!--{% for graph in graphs %}-->
-<!--<script>-->
-<!--    let {{ graph.label }}_context = document.getElementById('{{ graph.label }}').getContext('2d')-->
-<!--    let {{ graph.label }}_chart = new Chart({{ graph.label }}_context, {-->
-<!--        type: 'line',-->
-<!--        data: {-->
-<!--            datasets: [-->
-<!--                [],-->
-<!--                [],-->
-<!--                [],-->
-<!--            ]-->
-<!--        },-->
-<!--        options: {-->
-<!--            scales: {-->
-<!--                xAxes: [{-->
-<!--                    type: 'realtime',-->
-<!--                    realtime: {-->
-<!--                        duration: 30000,-->
-<!--                        refresh: 1000,-->
-<!--                        delay: 0,-->
-<!--                        onRefresh: plot.{{graph.label}}Refresh,-->
-<!--                    }-->
-<!--                }],-->
-<!--            }-->
-<!--        }-->
-<!--    });-->
-
-
-<!--</script>-->
-<!--{% endfor %}-->
 
 <script>
-    // let gyro_context = document.getElementById('gyro').getContext('2d');
-    // let gyro_chart = new Chart(gyro_context, {
-    //     type: 'line',
-    //     data: {
-    //         datasets: [{
-    //             label: 'Roll',
-    //             fill: false,
-    //             borderColor: 'rgb(244, 65, 89)',
-    //             data: []
-    //         }, {
-    //             label: 'Pitch',
-    //             fill: false,
-    //             borderColor: 'rgb(65, 244, 73)',
-    //             data: []
-    //         }, {
-    //             label: 'Yaw',
-    //             fill: false,
-    //             borderColor: 'rgb(66, 134, 244)',
-    //             data: []
-    //         }]
-    //     },
-    //     options: {
-    //         elements: {
-    //             point: {radius: 0},
-    //             line:{borderWidth: 1.5,}
-    //         },
-    //         scales: {
-    //             xAxes: [{
-    //                 type: 'realtime',
-    //                 realtime: {
-    //                     duration: 30000,
-    //                     refresh: 500,
-    //                     delay: 0,
-    //                     onRefresh: function (chart) {
-    //                         plot.gyroRefresh(chart)
-    //                     },
-    //                 }
-    //             }],
-    //         }
-    //     }
-    // });
     {% for graph in graphs %}
     let {{ graph.label }}_chart = new Chart(document.getElementById('{{graph.label}}').getContext('2d'), {
         type: 'line',
@@ -107,4 +36,5 @@
         }
     });
     {% endfor %}
+    initGraphs();
 </script>
